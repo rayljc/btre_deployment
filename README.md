@@ -1,14 +1,17 @@
 http://40.74.65.18/
 
 # Django Deployment to Ubuntu 18.04
+By Ray Jui-Chien Lin, July 2019.
 
-In this guide I will go through all the steps to create a VPS, secure it and deploy a Django application. This is a summarized document from this [digital ocean doc](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04)
+## Get Azure student subscription and 100 dollars
 
-Any commands with "$" at the beginning run on your local machine and any "#" run when logged into the server
+Use your .edu account and check your remaining dollars before deployment.
+![image](https://github.com/rayljc/btre_deployment/blob/master/image/Azure_usage.png)
 
-## Create A Digital Ocean Droplet
+## Create An Unbuntu Virtual Machine 
 
-Use [this link](https://m.do.co/c/5424d440c63a) and get $10 free. Just select the $5 plan unless this a production app.
+You can set ssh login and inbound ports at this time.
+![image](https://github.com/rayljc/btre_deployment/blob/master/image/Create_VM.png)
 
 # Security & Access
 
