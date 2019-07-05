@@ -1,11 +1,11 @@
-http://40.74.65.18/
+Deployed site: http://40.74.65.18/
 
 # Django Deployment to Ubuntu 18.04
 By Ray Jui-Chien Lin, July 2019.
 
 ## Get Azure student subscription and 100 dollars
 
-Use your .edu account and check your remaining dollars before deployment.
+Use your .edu email to register and check the remaining dollars before deployment.
 ![image](https://github.com/rayljc/btre_deployment/blob/master/image/Azure_usage.png)
 
 ## Create An Unbuntu Virtual Machine 
@@ -113,17 +113,7 @@ You need to install the python3-venv package
 # source venv/bin/activate
 ```
 
-# Git & Upload
-
-### Pip dependencies
-
-From your local machine, create a requirements.txt with your app dependencies. Make sure you push this to your repo
-
-```
-$ pip freeze > requirements.txt
-```
-
-Create a new repo and push to it (you guys know how to do that)
+# Git & GitHub
 
 ### Clone the project into the app folder on your server (Either HTTPS or setup SSH keys)
 
@@ -153,10 +143,12 @@ except ImportError:
 Create a file called **local_settings.py** on your server along side of settings.py and add the following
 
 - SECRET_KEY
+- DEBUG
 - ALLOWED_HOSTS
 - DATABASES
-- DEBUG
 - EMAIL\_\*
+
+Delete information in settings.py that was added into local_settings.py
 
 ## Run Migrations
 ```
@@ -186,6 +178,8 @@ python manage.py collectstatic
 ```
 # python manage.py runserver 0.0.0.0:8000
 ```
+
+![image](https://github.com/rayljc/btre_deployment/blob/master/image/0000_8000.png)
 
 ### Test the site at YOUR_SERVER_IP:8000
 
@@ -363,38 +357,4 @@ client_max_body_size 20M;
 ```
 
 ### Media File Issue
-You may have some issues with images not showing up. I would suggest, deleting all data and starting fresh as well as removeing the "photos" folder in the "media folder"
-```
-# sudo rm -rf media/photos
-```
-
-# Domain Setup
-
-Go to your domain registrar and create the following a record
-
-```
-@  A Record  YOUR_IP_ADDRESS
-www  CNAME  example.com
-```
-
-### Go to local_settings.py on the server and change "ALLOWED_HOSTS" to include the domain
-
-```
-ALLOWED_HOSTS = ['IP_ADDRESS', 'example.com', 'www.example.com']
-```
-
-### Edit /etc/nginx/sites-available/btre_project
-
-```
-server {
-    listen: 80;
-    server_name xxx.xxx.xxx.xxx example.com www.example.com;
-}
-```
-
-### Reload NGINX & Gunicorn
-
-```
-# sudo systemctl restart nginx
-# sudo systemctl restart gunicorn
-```
+You may have some issues with images not showing up. That's normal and you can re-upload them.
