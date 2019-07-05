@@ -22,3 +22,8 @@ About:
 ![image](https://github.com/rayljc/btre_deployment/blob/master/image/Demo_About_01.png)
 
 ![image](https://github.com/rayljc/btre_deployment/blob/master/image/Demo_About_02.png)
+
+Admin login and admin area:
+![image](https://github.com/rayljc/btre_deployment/blob/master/image/Demo_AdminLogin.png)
+
+![image](https://github.com/rayljc/btre_deployment/blob/master/image/Demo_AdminArea.png)
