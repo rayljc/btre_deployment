@@ -1,5 +1,3 @@
-Deployed site: http://40.74.65.18/
-
 # Django Deployment to Ubuntu 18.04
 By Ray Jui-Chien Lin, July 2019.
 
